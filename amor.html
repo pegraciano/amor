@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Para você ❤️</title>
+
+    <style>
+        body {
+            background-color: #ffe6e6;
+            text-align: center;
+            font-family: Arial;
+            margin-top: 100px;
+        }
+
+        h1 {
+            color: #cc0000;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #mensagem {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #990000;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Oi amor ❤️</h1>
+
+    <p>Clique no botão abaixo:</p>
+
+    <button onclick="mostrarMensagem()">Clique aqui</button>
+
+    <p id="mensagem"></p>
+
+    <script>
+        function mostrarMensagem() {
+            document.getElementById("mensagem").innerHTML = "Eu te amo muito ❤️ Você é a melhor coisa da minha vida!";
+        }
+    </script>
+
+</body>
+</html>
