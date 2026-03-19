@@ -1,54 +1,100 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <title>Para você ❤️</title>
+<meta charset="UTF-8">
+<title>Para você ❤️</title>
 
-    <style>
-        body {
-            background-color: #ffe6e6;
-            text-align: center;
-            font-family: Arial;
-            margin-top: 100px;
-        }
+<style>
+body {
+    background-color: #ffe6e6;
+    text-align: center;
+    font-family: Arial;
+    overflow: hidden;
+}
 
-        h1 {
-            color: #cc0000;
-        }
+h1 {
+    color: #cc0000;
+    margin-top: 80px;
+}
 
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #ff4d4d;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
-        #mensagem {
-            margin-top: 20px;
-            font-size: 20px;
-            color: #990000;
-        }
-    </style>
+#mensagem {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #990000;
+}
+
+/* corações */
+.coracao {
+    position: absolute;
+    color: red;
+    font-size: 20px;
+    animation: cair 4s linear infinite;
+}
+
+@keyframes cair {
+    0% {
+        transform: translateY(-50px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <h1>Oi amor ❤️</h1>
+<h1>Oi amor ❤️</h1>
 
-    <p>Clique no botão abaixo:</p>
+<p>Clique no botão:</p>
 
-    <button onclick="mostrarMensagem()">Clique aqui</button>
+<button onclick="mostrarMensagem()">Clique aqui</button>
 
-    <p id="mensagem"></p>
+<p id="mensagem"></p>
+<p id="contador"></p>
 
-    <script>
-        function mostrarMensagem() {
-            document.getElementById("mensagem").innerHTML = "Eu te amo muito ❤️ Você é a melhor coisa da minha vida!";
-        }
-    </script>
+<script>
+let contador = 0;
+
+function mostrarMensagem() {
+    contador++;
+
+    document.getElementById("mensagem").innerHTML =
+        "Eu te amo muito ❤️";
+
+    document.getElementById("contador").innerHTML =
+        "Você recebeu " + contador + " eu te amo 💖";
+
+    criarCoracao();
+}
+
+// cria corações caindo
+function criarCoracao() {
+    let coracao = document.createElement("div");
+    coracao.classList.add("coracao");
+    coracao.innerHTML = "❤️";
+
+    coracao.style.left = Math.random() * 100 + "vw";
+
+    document.body.appendChild(coracao);
+
+    setTimeout(() => {
+        coracao.remove();
+    }, 4000);
+}
+</script>
 
 </body>
 </html>
